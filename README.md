@@ -12,3 +12,7 @@ Basic command line Tic-Tac-Toe game in C.
 or if already made:
 
 > ./run
+
+## Testing
+To run the testing harness:
+> make -f testMake
