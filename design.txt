@@ -1,0 +1,35 @@
+DESIGN OF TIC TAC TOE GAME:
+
+Main file
+	- Creates a tictac toe mainGame Object
+	- Calls a function start, which initializes the board, and inital state
+	- Returns 0 as the main function should
+Class Structure
+	Base class GAME
+		- Functions
+			startGame, resetGameState, getGameStatistics, endGame, getNextPlayer, getBoard, setDifficulty (e/m/h?)
+		- Class Variables
+			Board (another class on its own!!)
+			Player playerA
+			Player playerB
+
+	Base class PLAYER
+		- Functions
+			playerStats, playerName, makeMove
+		- Variables
+			gameType - i.e. multiplayer, human vs human, human vs ai.
+		Derived Classes
+			HUMAN PLAYER
+			- Functions
+				getName, setName
+			- Variables
+				x_pos - x position of move
+				y_pos - y position of the move
+				score - keeps track of the scores
+				moves - keep track of the history of moves
+
+			AI PLAYER
+			- Functions
+				getBestMove - makes a judgement on the best move to make, by evaluating
+				all possible moves, and giving them a value based on how effective they will be to generating a "win"
+				or "lose" situation

@@ -1,0 +1,32 @@
+run: game1
+	./game1
+
+game1: testMain.o board.o game.o player.o human.o ai.o aiOverwatch.o testScript.o
+	g++ testMain.o board.o game.o player.o human.o ai.o aiOverwatch.o testScript.o -o game1
+
+testMain.o: testMain.cpp
+	g++ -Wall -c testMain.cpp
+
+testScript.o: testScript.cpp testScript.h
+	g++ -Wall -c testScript.cpp
+
+board.o: board.cpp board.h
+	g++ -Wall -c board.cpp
+
+game.o: game.cpp game.h
+	g++ -Wall -c game.cpp
+
+player.o: player.cpp player.h
+	g++ -Wall -c player.cpp
+
+human.o: human.cpp human.h
+	g++ -Wall -c human.cpp
+
+ai.o: ai.cpp ai.h
+	g++ -Wall -c ai.cpp
+
+aiOverwatch.o: aiOverwatch.cpp aiOverwatch.h
+	g++ -Wall -c aiOverwatch.cpp
+
+clean:
+	rm *.o game1
